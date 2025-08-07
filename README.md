@@ -13,8 +13,6 @@
 
 * Tor Browser
 
-<hr>
-
 
 ---
 
