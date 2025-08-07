@@ -140,15 +140,11 @@ The renamed installer file.exe was executed silently with the command:
 Initiated by: `powershell.exe`
 SHA256: `6d38a13c6a5865b373ef1e1ffcd31b3f359abe896571d27fa666ce71c486a40d`
 
+4. The user deleted the original installer.
 
-4. Post-installation
-A folder and supporting files were likely created (e.g., TOR browser components), including a text file titled:
-`tor_shopping_list.txt`
-
-
-
-5. The user deleted the original installer.
-
+5. Post-installation
+A folder and supporting files were created (e.g., tor_shopping_list), including text files titled:
+`drugs_i_need.txt`, `dancers.txt`, and `weapons.txt`.
 
 6. [2025-08-06 23:25:09 to 23:25:49]
 The process `tor.exe` initiated multiple outbound connections using TOR protocol:
