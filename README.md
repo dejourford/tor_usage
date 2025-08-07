@@ -72,12 +72,12 @@ DeviceFileEvents
 ```
 
 <div align=center>
-    <img src="images/file_events.png" alt="file events" width=600/><br />
+    <img src="images/file_events.png" alt="file events" width=800/><br />
 </div>
 
 
 <div align=center>
-    <img src="images/file_events2.png" alt="file events" width=600/><br />
+    <img src="images/file_events2.png" alt="file events" width=800/><br />
 </div>
 
 
@@ -99,7 +99,7 @@ DeviceProcessEvents
 
 
 <div align=center>
-    <img src="images/process_events.png" alt="process events" width=600/><br />
+    <img src="images/process_events.png" alt="process events" width=800/><br />
 </div>
 
 Step 3) Searched `DeviceNetworkEvents`
@@ -116,7 +116,7 @@ DeviceNetworkEvents
 ```
 
 <div align=center>
-    <img src="images/network_events.png" alt="network events" width=600/><br />
+    <img src="images/network_events.png" alt="network events" width=800/><br />
 </div>
 
 <hr>
