@@ -53,19 +53,54 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ## Steps Taken
 
-1. Test
 
-2. Test
 
-3. 
+
+
+Step 1) Searched `DeviceFileEvents` 
+
+Searched the DeviceFileEvents table for ANY file that had the string "tor" in it and discovered the user "a-dford" downloaded a tor installer, renamed it, and then did something that resulted in other tor-related files to be created on the desktop. The user then deleted the downloaded tor installer and created a file named "tor_shopping_list.txt". These events began at: 2025-08-07T04:05:30.6764524Z. The SHA256 of the downloaded installer is: `6d38a13c6a5865b373ef1e1ffcd31b3f359abe896571d27fa666ce71c486a40d`.
 ```
-let deviceName = "deej-ford";
-DeviceProcessEvents
-| where DeviceName == deviceName
+DeviceFileEvents
+| where DeviceName == "deej-ford"
+| where InitiatingProcessAccountName == "a-dford"
+| where Timestamp >= datetime(2025-08-07T04:05:30.6764524Z)
 | where FileName contains "tor"
 | order by Timestamp desc
-| project Timestamp, DeviceName, ProcessCommandLine, FileName
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
 ```
+
+<hr>
+
+
+Step 2) Searched `DeviceProcessEvents`
+
+Searched the DeviceProcessEvents table for ANY command line process that contained the downloaded tor installer "tor-browser-windows-x86_64-portable-14.5.5.5.exe" but no result were returned. Since the file was renamed, I searched for any command line process with the matching SHA256, and an entry with the file name of "file.exe" was populated. It shows that the user executed the "file.exe" with the `/S` argument to trigger a silent install.
+
+```
+DeviceProcessEvents
+| where DeviceName == "deej-ford"
+| where InitiatingProcessAccountName == "a-dford"
+| where Timestamp >= datetime(2025-08-07T04:05:30.6764524Z)
+| where SHA256 == "6d38a13c6a5865b373ef1e1ffcd31b3f359abe896571d27fa666ce71c486a40d"
+```
+<hr>
+
+Step 3) Searched `DeviceNetworkEvents`
+
+Searched the DeviceNetworkEvents table for InitiatingProcessFileNames of "tor.exe" or "firefox.exe" to check for TOR browser usage and results populated confirming TOR browser usage. At 2025-08-07T04:25:49.7262415Z, user "a-dford" on the device "deej-ford", used tor.exe to establish connection to several URLs over ports 443 and 9001.
+
+```
+DeviceNetworkEvents
+| where DeviceName == "deej-ford"
+| where InitiatingProcessFileName in~ ("tor.exe", "firefox.exe")
+| where RemoteUrl != ""
+| project Timestamp, InitiatingProcessAccountName, DeviceName, InitiatingProcessFileName, RemotePort, RemoteUrl
+| order by Timestamp desc
+```
+
+<hr>
+
 
 ## Chronological Events
 
