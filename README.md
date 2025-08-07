@@ -1,6 +1,6 @@
 # Threat Hunt Report: Unauthorized TOR Usage
 <div align=center>
-<img src="images/hero.png" alt="hero image" width=1000/><br />
+<img src="images/hero.png" alt="hero image" width=800/><br />
 </div>
 
 ## Technology Utilized
