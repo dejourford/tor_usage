@@ -58,8 +58,15 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 2. Test
 
-3. Test
-
+3. 
+```
+let deviceName = "deej-ford";
+DeviceProcessEvents
+| where DeviceName == deviceName
+| where FileName contains "tor"
+| order by Timestamp desc
+| project Timestamp, DeviceName, ProcessCommandLine, FileName
+```
 
 ## Chronological Events
 
