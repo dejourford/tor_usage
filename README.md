@@ -1,18 +1,17 @@
 # Threat Hunt Report: Unauthorized TOR Usage
-
-<img src="images/hero.png" alt="hero image" width=600/><br />
+<div align=center>
+<img src="images/hero.png" alt="hero image" width=1000/><br />
+</div>
 
 ## Technology Utilized
 
-*Windows 10 Virtual Machine (Microsoft Azure)
+* Windows 10 Virtual Machine (Microsoft Azure)
 
-*Microsoft Defender for Endpoint
+* Microsoft Defender for Endpoint
 
-*Kusto Query Language (KQL)
+* Kusto Query Language (KQL)
 
-*Tor Browser
-
-<hr>
+* Tor Browser
 
 
 ---
@@ -46,11 +45,11 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ## High-Level TOR related IoC (Indicators of Compromise) Disocvery Plan:
 
-*Check `DeviceFileEvents` for any `tor(.exe)` or `firefox(.exe)` file events
+* Check `DeviceFileEvents` for any `tor(.exe)` or `firefox(.exe)` file events
 
-*Check `DeviceProcessEvents` for any signs of installation or usage
+* Check `DeviceProcessEvents` for any signs of installation or usage
 
-*Check `DeviceNetworkEvents` for any signs of outgoing connections over known TOR ports 
+* Check `DeviceNetworkEvents` for any signs of outgoing connections over known TOR ports 
 
 ## Steps Taken
 
