@@ -59,7 +59,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 Step 1) Searched `DeviceFileEvents` 
 
-Searched the DeviceFileEvents table for ANY file that had the string "tor" in it and discovered the user "a-dford" downloaded a tor installer, renamed it, and then did something that resulted in other tor-related files to be created on the desktop. The user then deleted the downloaded tor installer and created a file named "tor_shopping_list.txt". These events began at: 2025-08-07T04:05:30.6764524Z. The SHA256 of the downloaded installer is: `6d38a13c6a5865b373ef1e1ffcd31b3f359abe896571d27fa666ce71c486a40d`.
+Searched the DeviceFileEvents table for ANY file that had the string "tor" or ".txt" in it and discovered the user "a-dford" downloaded a tor installer, renamed it, and then did something that resulted in other tor-related files to be created on the desktop. The user then deleted the downloaded tor installer and created a file named "tor_shopping_list.txt". These events began at: 2025-08-07T04:05:30.6764524Z. The SHA256 of the downloaded installer is: `6d38a13c6a5865b373ef1e1ffcd31b3f359abe896571d27fa666ce71c486a40d`.
 
 ```
 DeviceFileEvents
