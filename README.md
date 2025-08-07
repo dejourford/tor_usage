@@ -5,13 +5,13 @@
 
 ## Technology Utilized
 
-*Windows 10 Virtual Machine (Microsoft Azure)
+* Windows 10 Virtual Machine (Microsoft Azure)
 
-*Microsoft Defender for Endpoint
+* Microsoft Defender for Endpoint
 
-*Kusto Query Language (KQL)
+* Kusto Query Language (KQL)
 
-*Tor Browser
+* Tor Browser
 
 <hr>
 
