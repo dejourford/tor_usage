@@ -47,11 +47,11 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ## High-Level TOR related IoC (Indicators of Compromise) Disocvery Plan:
 
-*Check `DeviceFileEvents` for any `tor(.exe)` or `firefox(.exe)` file events
+* Check `DeviceFileEvents` for any `tor(.exe)` or `firefox(.exe)` file events
 
-*Check `DeviceProcessEvents` for any signs of installation or usage
+* Check `DeviceProcessEvents` for any signs of installation or usage
 
-*Check `DeviceNetworkEvents` for any signs of outgoing connections over known TOR ports 
+* Check `DeviceNetworkEvents` for any signs of outgoing connections over known TOR ports 
 
 ## Steps Taken
 
